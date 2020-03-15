@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <template id="layout_footer_copyright" inherit_id="website.layout_footer_copyright">
+        <xpath expr="//t[@t-call='website.language_selector']" position="replace"/>
+    </template>
+    <template id="portal_show_sign_in" inherit_id="portal.portal_show_sign_in">
+        <xpath expr="//li[2]" position="after">
+            <t t-call="website.language_selector"/>
+        </xpath>
+    </template>
 </odoo>

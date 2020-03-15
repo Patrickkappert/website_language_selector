@@ -17,7 +17,7 @@
                         <li class="dropdown" t-foreach="languages" t-as="lg" role="menuitem">
                             <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])"
                                t-att-data-default-lang="editable and 'true' if lg[0] == website.default_lang_code else None" role="menuitem">
-                                <img class="oe_ls_flag" t-att-src="'/langauge/static/src/img/flags/16x11/' + lg[0].split('_')[0] + '.png'"/>
+                                <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/16x11/' + lg[0].split('_')[0] + '.png'"/>
                                 <t t-esc="lg[1].split('/').pop()"/>
                                 <t t-if="len(lg)>3"><t t-esc="lg[3]"/></t>
                             </a>

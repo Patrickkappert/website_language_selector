@@ -3,11 +3,28 @@
     <template id="layout_footer_copyright" inherit_id="website.layout_footer_copyright">
         <xpath expr="//t[@t-call='website.language_selector']" position="replace"/>
     </template>
-    <template id="portal_show_language_selector" inherit_id="portal.frontend_layout" name="Show Language Selector">
-        <xpath expr="//ul[@id='top_menu']" position="inside">
-            <li groups="base.group_public" class="nav-item">
-                <t t-call="website.language_selector"/>
-            </li>
+    <template id="language_selector" inherit_id="website.layout" name="Show Language Selector">
+        <xpath  expr="//header//ul[@id='top_menu']"  position="inside">
+            <ul class="nav navbar-nav navbar-right" id="top_menu">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <b>
+                            <img class="oe_ls_flag" src="/website_language_selector/static/src/img/worldwide.png"/>
+                            <span class="caret"></span>
+                        </b>
+                    </a>
+                    <ul class="dropdown-menu " role="menu">
+                        <li class="dropdown" t-foreach="languages" t-as="lg" role="menuitem">
+                            <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])"
+                               t-att-data-default-lang="editable and 'true' if lg[0] == website.default_lang_code else None" role="menuitem">
+                                <img class="oe_ls_flag" t-att-src="'/langauge/static/src/img/flags/16x11/' + lg[0].split('_')[0] + '.png'"/>
+                                <t t-esc="lg[1].split('/').pop()"/>
+                                <t t-if="len(lg)>3"><t t-esc="lg[3]"/></t>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </xpath>
     </template>
 </odoo>

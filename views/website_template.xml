@@ -5,7 +5,9 @@
     </template>
     <template id="portal_show_sign_in" inherit_id="portal.portal_show_sign_in">
         <xpath expr="//li[2]" position="after">
-            <t t-call="website.language_selector"/>
+            <li groups="base.group_public" class="nav-item">
+                <t t-call="website.language_selector"/>
+            </li>            
         </xpath>
     </template>
 </odoo>

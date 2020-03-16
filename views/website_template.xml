@@ -5,29 +5,29 @@
     </template>
     <template id="language_selector" inherit_id="website.language_selector">
         <xpath expr="//ul/li" position="replace">
-            <li class="dropdown nav-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/16x11/' + lang + '.png'"/>
-                    <span t-esc="lang.split('_').pop().upper()"/>
-                    <span class="caret"/>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li t-foreach="languages" t-as="lg">
-                        <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])"
-                           class="dropdown-item js_change_lang"
-                           t-att-data-default-lang="(editable or translatable) and 'true' if website and lg[0] == website.default_lang_code else None"
-                           t-att-data-lang="lg[0]">
-                            <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/16x11/' + lg[0] + '.png'"/>
-                            <t t-esc="lg[1].split('/').pop()"/>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/16x11/' + lang + '.png'"/>
+                <span t-esc="lang.split('_').pop().upper()"/>
+                <span class="caret"/>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li t-foreach="languages" t-as="lg">
+                    <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])"
+                       class="dropdown-item js_change_lang"
+                       t-att-data-default-lang="(editable or translatable) and 'true' if website and lg[0] == website.default_lang_code else None"
+                       t-att-data-lang="lg[0]">
+                        <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/16x11/' + lg[0] + '.png'"/>
+                        <t t-esc="lg[1].split('/').pop()"/>
+                    </a>
+                </li>
+            </ul>
         </xpath>
     </template>
     <template id="portal_show_language_selector" inherit_id="portal.portal_show_sign_in" name="Show Language Selector">
         <xpath expr="//ul[@id='top_menu']" position="inside">
-            <t t-call="website.language_selector"/>
+            <li class="nav-item">
+                <t t-call="website.language_selector"/>
+            </li>
         </xpath>
     </template>
 </odoo>

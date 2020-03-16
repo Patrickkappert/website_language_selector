@@ -6,9 +6,12 @@
     <template id="language_selector" inherit_id="website.language_selector">
         <xpath expr="//ul/li" position="replace">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <span t-esc="list(filter(lambda lg : lg[0] == lang, languages))[0][1]"/>
-                </a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <b>
+                            <img class="oe_ls_flag" src="/website_language_selector/static/src/img/worldwide.png"/>
+                            <span class="caret"/>
+                        </b>
+                    </a>
                 <ul class="dropdown-menu" role="menu">
                     <t t-foreach="languages" t-as="lg">
                         <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])"

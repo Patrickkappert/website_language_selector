@@ -7,11 +7,9 @@
         <xpath expr="//ul/li" position="replace">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <b>
-                        <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/16x11/' + lang.split('_')[0] + '.png'"/>
-                        <span t-esc="lang.split('_').pop().upper()"/>
-                        <span class="caret"/>
-                    </b>
+                    <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/16x11/' + lang + '.png'"/>
+                    <span t-esc="lang.split('_').pop().upper()"/>
+                    <span class="caret"/>
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <li t-foreach="languages" t-as="lg">
@@ -19,7 +17,7 @@
                            class="dropdown-item js_change_lang"
                            t-att-data-default-lang="(editable or translatable) and 'true' if website and lg[0] == website.default_lang_code else None"
                            t-att-data-lang="lg[0]">
-                            <img class="oe_ls_flag" src="'/website_language_selector/static/src/img/flags/16x11/' + lg[0].split('_')[0] + '.png'"/>
+                            <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/16x11/' + lang + '.png'"/>
                             <t t-esc="lg[1].split('/').pop()"/>
                         </a>
                     </li>

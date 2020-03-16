@@ -9,7 +9,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <b>
                         <!--<img class="oe_ls_flag" src="/website_language_selector/static/src/img/worldwide.png"/>-->
-                        <span t-esc="lang"/>
+                        <span t-esc="lang.split('-')[0]"/>
                         <span class="caret"/>
                     </b>
                 </a>

@@ -24,6 +24,8 @@
                 </ul>
             </li>
         </xpath>
+    </template>
+    <template id="show_language_selector" inherit_id="website.layout" name="Show Language Selector">
         <xpath  expr="//header//ul[@id='top_menu']/li"  position="after">
             <t t-call="website.language_selector"/>
         </xpath>

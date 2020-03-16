@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--<template id="layout_footer_copyright" inherit_id="website.layout_footer_copyright">
+    <template id="layout_footer_copyright" inherit_id="website.layout_footer_copyright">
         <xpath expr="//t[@t-call='website.language_selector']" position="replace"/>
-    </template>-->
+    </template>
     <template id="language_selector" inherit_id="website.language_selector">
         <xpath expr="//ul/li" position="replace">
             <li class="dropdown">
@@ -24,28 +24,8 @@
                 </ul>
             </li>
         </xpath>
-        <!--<xpath  expr="//header//ul[@id='top_menu']/li"  position="after">
-            <ul class="navbar-nav ml-auto navbar-right" id="top_menu">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <b>
-                            <img class="oe_ls_flag" src="/website_language_selector/static/src/img/worldwide.png"/>
-                            <span class="caret"></span>
-                        </b>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <t t-foreach="languages" t-as="lg">
-                            <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])"
-                               class="dropdown-item js_change_lang"
-                               t-att-data-default-lang="(editable or translatable) and 'true' if website and lg[0] == website.default_lang_code else None"
-                               t-att-data-lang="lg[0]">
-                                <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/16x11/' + lg[0].split('_')[0] + '.png'"/>
-                                <t t-esc="lg[1].split('/').pop()"/>
-                            </a>
-                        </t>
-                    </ul>
-                </li>
-            </ul>
-        </xpath>-->
+        <xpath  expr="//header//ul[@id='top_menu']/li"  position="after">
+            <t t-call="website.language_selector"/>
+        </xpath>
     </template>
 </odoo>

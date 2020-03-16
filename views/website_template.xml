@@ -8,8 +8,8 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <b>
-                        <!--<img class="oe_ls_flag" src="/website_language_selector/static/src/img/worldwide.png"/>-->
-                        <span t-esc="lang.split('_')[0]"/>
+                        <img class="oe_ls_flag" src="'/website_language_selector/static/src/img/flags/16x11/' + lang.split('_')[0] + '.png'"/>
+                        <span t-esc="upper(lang)"/>
                         <span class="caret"/>
                     </b>
                 </a>

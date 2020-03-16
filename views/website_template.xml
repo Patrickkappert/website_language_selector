@@ -9,7 +9,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <b>
                         <img class="oe_ls_flag" src="'/website_language_selector/static/src/img/flags/16x11/' + lang.split('_')[0] + '.png'"/>
-                        <span t-esc="lang.upper"/>
+                        <span t-esc="lang.upper()"/>
                         <span class="caret"/>
                     </b>
                 </a>

@@ -26,8 +26,7 @@
         </xpath>
     </template>
     <template id="portal_show_language_selector" inherit_id="portal.portal_show_sign_in" name="Show Language Selector">
-        <xpath expr="//li" position="before">
+        <xpath expr="//ul[@id='top_menu']" position="inside">
             <t t-call="website.language_selector"/>
-        </xpath>
     </template>
 </odoo>

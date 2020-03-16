@@ -6,14 +6,15 @@
     <template id="language_selector" inherit_id="website.language_selector">
         <xpath expr="//ul/li" position="replace">
             <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <b>
-                            <img class="oe_ls_flag" src="/website_language_selector/static/src/img/worldwide.png"/>
-                            <span class="caret"/>
-                        </b>
-                    </a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <b>
+                        <!--<img class="oe_ls_flag" src="/website_language_selector/static/src/img/worldwide.png"/>-->
+                        <span t-esc="lg[0]"/>
+                        <span class="caret"/>
+                    </b>
+                </a>
                 <ul class="dropdown-menu" role="menu">
-                    <t t-foreach="languages" t-as="lg">
+                    <li t-foreach="languages" t-as="lg">
                         <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])"
                            class="dropdown-item js_change_lang"
                            t-att-data-default-lang="(editable or translatable) and 'true' if website and lg[0] == website.default_lang_code else None"
@@ -21,7 +22,7 @@
                             <img class="oe_ls_flag" src="'/website_language_selector/static/src/img/flags/16x11/' + lg[0].split('_')[0] + '.png'"/>
                             <t t-esc="lg[1].split('/').pop()"/>
                         </a>
-                    </t>
+                    </li>
                 </ul>
             </li>
         </xpath>

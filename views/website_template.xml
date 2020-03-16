@@ -5,7 +5,7 @@
     </template>
     <template id="language_selector" inherit_id="website.language_selector">
         <xpath expr="//ul/li" position="replace">
-            <li class="dropdown">
+            <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/16x11/' + lang + '.png'"/>
                     <span t-esc="lang.split('_').pop().upper()"/>

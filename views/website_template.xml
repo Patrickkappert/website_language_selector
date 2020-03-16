@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--<template id="layout_footer_copyright" inherit_id="website.layout_footer_copyright">
+    <template id="layout_footer_copyright" inherit_id="website.layout_footer_copyright">
         <xpath expr="//t[@t-call='website.language_selector']" position="replace"/>
-    </template>-->
+    </template>
     <template id="language_selector_menu" inherit_id="website.language_selector">
         <xpath expr="//ul/li" position="replace">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -25,8 +25,8 @@
     </template>
     <template id="portal_show_language_selector" inherit_id="portal.frontend_layout" name="Show Language Selector">
         <xpath expr="//ul[@id='top_menu']" position="inside">
-            <li class="nav-item">
-                <t t-call="website.language_selector_menu"/>
+            <li class="nav-item dropdown">
+                <t t-call="website.language_selector"/>
             </li>
         </xpath>
     </template>

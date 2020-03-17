@@ -6,7 +6,7 @@
     <template id="language_selector_menu" inherit_id="website.language_selector">
         <xpath expr="//ul/li" position="replace">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/' + lang + '.png'"/>
+                <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/' + lang + '.png'" height="40"/>
                 <span t-esc="lang.split('_').pop().upper()"/>
                 <span class="caret"/>
             </a>
@@ -16,7 +16,7 @@
                        class="dropdown-item js_change_lang"
                        t-att-data-default-lang="(editable or translatable) and 'true' if website and lg[0] == website.default_lang_code else None"
                        t-att-data-lang="lg[0]">
-                        <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/' + lg[0] + '.png'"/>
+                        <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/' + lg[0] + '.png'" height="40"/>
                         <t t-esc="lg[1].split('/').pop()"/>
                     </a>
                 </li>

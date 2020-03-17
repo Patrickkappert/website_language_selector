@@ -5,7 +5,7 @@
     </template>
     <template id="language_selector_menu" inherit_id="website.language_selector">
         <xpath expr="//ul/li" position="replace">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <img class="oe_ls_flag" t-att-src="'/website_language_selector/static/src/img/flags/' + lang + '.png'" height="18"/>
             </a>
             <ul class="dropdown-menu" role="menu">
@@ -23,7 +23,7 @@
     </template>
     <template id="portal_show_language_selector" inherit_id="portal.frontend_layout" name="Show Language Selector">
         <xpath expr="//ul[@id='top_menu']" position="inside">
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" t-ignore="true">
                 <t t-call="website.language_selector"/>
             </li>
         </xpath>

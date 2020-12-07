@@ -6,8 +6,8 @@
 
     'description': """Move the language select to the menu""",
 
-    'author': "Safyric Co., Ltd.",
-    'website': "https://www.safyric.com",
+    'author': "S",
+    'website': "",
 
     'category': 'Website',
     'version': '12.0.0.1',
